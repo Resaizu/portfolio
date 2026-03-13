@@ -1,6 +1,9 @@
 <template>
-  <section id="skills" class="max-w-6xl mx-auto px-4 py-16 neon-line">
-    <h3 class="text-2xl font-semibold mb-10">Skills</h3>
+  <section id="skills" class="max-w-6xl mx-auto px-4 py-16">
+    <div class="flex gap-3">
+      <span class="font-playfair tracking-[8px] text-2xl font-bold text-[var(--neon-cyan)]">//</span>
+      <span class="text-2xl font-semibold text-[var(--neon-pink)] tracking-widest">Skills</span>
+    </div>
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
       <div class="skill">Laravel</div>

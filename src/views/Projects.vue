@@ -1,6 +1,9 @@
 <template>
-  <section id="projects" class="max-w-6xl mx-auto px-4 py-16 neon-line">
-    <h3 class="text-2xl font-semibold mb-10">Projects</h3>
+  <section id="projects" class="max-w-6xl mx-auto px-4 py-16">
+    <div class="flex gap-3">
+      <span class="font-playfair tracking-[8px] text-2xl font-bold text-[var(--neon-cyan)]">//</span>
+      <span class="text-2xl font-semibold text-[var(--neon-pink)] tracking-widest">Projects</span>
+    </div>
 
     <div class="grid md:grid-cols-3 gap-8">
 

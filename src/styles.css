@@ -1,4 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap');
 @import 'tailwindcss';
+@theme {
+  --font-playfair: 'Playfair Display', Inter, system-ui, sans-serif;
+}
+
+:root {
+  --neon-cyan: #00f5ff;
+  --neon-pink: #ff006e;
+  --neon-purple: #a855f7;
+  --neon-yellow: #ffee00;
+  --neon-green: #00ff88;
+  --bg-deep: #020617;
+  --bg-card: rgba(10, 5, 30, 0.85);
+  --text-main: #e8e0ff;
+  --text-dim: #8a80aa;
+  --accent: #7c3aff;
+}
 
 .neon-line {
   position: relative;
@@ -13,7 +30,14 @@
   width: 100%;
   height: 2px;
 
-  background: linear-gradient(90deg, transparent, #22d3ee, #a855f7, #fb7185, transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--neon-cyan),
+    var(--neon-purple),
+    var(--neon-pink),
+    transparent
+  );
 
   filter: blur(4px);
   opacity: 0.9;
