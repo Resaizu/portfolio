@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap');
 @import 'tailwindcss';
-@theme {
-  --font-playfair: 'Playfair Display', Inter, system-ui, sans-serif;
-}
 
 :root {
   --neon-cyan: #00f5ff;
@@ -11,10 +8,20 @@
   --neon-yellow: #ffee00;
   --neon-green: #00ff88;
   --bg-deep: #020617;
-  --bg-card: rgba(10, 5, 30, 0.85);
-  --text-main: #e8e0ff;
-  --text-dim: #8a80aa;
   --accent: #7c3aff;
+}
+
+@theme {
+  --font-playfair: 'Playfair Display', Inter, system-ui, sans-serif;
+  --color-neon-pink: var(--neon-pink);
+  --color-neon-cyan: var(--neon-cyan);
+  --color-neon-purple: var(--neon-purple);
+  --color-neon-green: var(--neon-green);
+  --breakpoint-2560: 2560px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .neon-line {
@@ -41,4 +48,23 @@
 
   filter: blur(4px);
   opacity: 0.9;
+}
+
+.neon-text {
+  color: var(--neon-pink);
+  animation: neonBoot 3.2s ease forwards;
+}
+
+@keyframes neonBoot {
+  0%   { opacity: 0; text-shadow: none; }
+  10%  { opacity: 0.9; text-shadow: 0 0 8px var(--neon-pink); }
+  13%  { opacity: 0; text-shadow: none; }
+  16%  { opacity: 0.85; text-shadow: 0 0 10px var(--neon-pink); }
+  18%  { opacity: 0; text-shadow: none; }
+  22%  { opacity: 1; text-shadow: 0 0 6px var(--neon-pink), 0 0 20px var(--neon-pink); }
+  25%  { opacity: 0.3; text-shadow: none; }
+  30%  { opacity: 1; text-shadow: 0 0 8px var(--neon-pink), 0 0 30px var(--neon-pink), 0 0 60px #ff006699; }
+  33%  { opacity: 0.6; text-shadow: 0 0 4px var(--neon-pink); }
+  38%  { opacity: 1; text-shadow: 0 0 10px var(--neon-pink), 0 0 40px var(--neon-pink), 0 0 80px #ff006688; }
+  100% { opacity: 1; text-shadow: 0 0 10px var(--neon-pink), 0 0 30px var(--neon-pink), 0 0 60px #ff006688, 0 0 100px #ff003355; }
 }
