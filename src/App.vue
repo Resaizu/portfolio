@@ -124,7 +124,7 @@
     <footer class="relative z-30 -mt-10 mb-5 block text-sm text-gray-300">
       <div class="flex items-center justify-center gap-2">
         <span>
-          Designed &amp; Developed by
+          Original Work by 
           <a href="https://github.com/Resaizu" target="_blank" class="text-neon-pink">Dennis V. Ampat</a>
           <div class="h-2 w-2 rounded-full bg-neon-purple inline-block mx-2"></div>
           2025.
