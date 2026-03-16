@@ -4,7 +4,8 @@
 
 This is my personal developer portfolio inspired with dark neon vibes.
 
-You are free to fork or use this project as a template for your own portfolio. If you do, please provide proper attribution by crediting **Dennis Ampat** and linking back to this repository.
+You are free to fork or use this project as a template for your own portfolio.
+If you do, please consider crediting **Dennis Ampat** and linking back to this repository.
 
 ## Tech Stack
 
