@@ -12,14 +12,14 @@
       <div class="mt-10 flex gap-4">
         <a
           href="#projects"
-          class="border-neon-purple hover:border-neon-pink font-playfair rounded border px-6 py-3 font-medium transition-colors"
+          class="border-neon-purple hover:border-neon-pink font-playfair rounded border px-6 py-3 font-medium transition-colors hover:shadow-[0_0_8px_var(--neon-pink)] focus:shadow-[0_0_8px_var(--neon-pink)] focus:outline-none"
         >
           View Projects
         </a>
 
         <a
           href="#contact"
-          class="font-playfair rounded border border-gray-700 px-6 py-3 text-gray-300 transition-colors hover:border-gray-400"
+          class="font-playfair rounded border border-gray-700 px-6 py-3 text-gray-300 transition-colors hover:border-gray-400 hover:shadow-[0_0_8px_var(--neon-green)] focus:shadow-[0_0_8px_var(--neon-green)] focus:outline-none"
         >
           Get in Touch
         </a>

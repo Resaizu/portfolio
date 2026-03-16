@@ -1,5 +1,5 @@
 <template>
-  <section id="about" class="neon-line 2560:min-h-[50vh] mx-auto min-h-[80vh] max-w-6xl scroll-mt-20 px-4 py-16">
+  <section id="about" class="neon-line 2560:min-h-[50vh] mx-auto min-h-[80vh] max-w-6xl px-4 py-16">
     <div class="flex gap-3 pt-20">
       <span class="font-playfair text-neon-cyan text-2xl font-bold tracking-[8px] md:text-4xl">//</span>
       <span class="text-neon-pink text-2xl font-semibold tracking-widest md:text-4xl">About</span>

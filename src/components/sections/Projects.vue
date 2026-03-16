@@ -1,5 +1,5 @@
 <template>
-  <section id="projects" class="2560:min-h-[50vh] mx-auto min-h-[80vh] max-w-6xl scroll-mt-20 px-4 py-16">
+  <section id="projects" class="2560:min-h-[50vh] mx-auto min-h-[80vh] max-w-6xl px-4 py-16">
     <div class="flex gap-3">
       <span class="font-playfair text-neon-cyan text-2xl font-bold tracking-[8px]">//</span>
       <span class="text-neon-pink text-2xl font-semibold tracking-widest">Projects</span>
@@ -9,7 +9,7 @@
       <neon-card
         v-for="project in projects"
         :key="project"
-        class="transition-shadow duration-300 hover:shadow-[0_0_8px_0_var(--neon-purple)]"
+        class="transition-all duration-300 hover:translate-y-[-3px] hover:shadow-[0_0_5px_0_var(--neon-pink)]"
       >
         <div class="flex h-full flex-col p-2">
           <div class="relative h-48 shrink-0 overflow-hidden rounded-t-md">

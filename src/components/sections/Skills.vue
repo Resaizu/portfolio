@@ -1,5 +1,5 @@
 <template>
-  <section id="skills" class="2560:min-h-[50vh] mx-auto min-h-[80vh] max-w-6xl scroll-mt-20 px-4 py-16">
+  <section id="skills" class="2560:min-h-[50vh] mx-auto min-h-[80vh] max-w-6xl px-4 py-16">
     <div class="flex gap-3">
       <span class="font-playfair text-neon-cyan text-2xl font-bold tracking-[8px]">//</span>
       <span class="text-neon-pink text-2xl font-semibold tracking-widest">Technical Skills</span>
@@ -44,8 +44,8 @@ const skills = [
   },
   {
     title: 'Frontend',
-    stacks: ['Vue', 'Pinia', 'Tailwind CSS'],
-    stack_equivalent: ['JS Framework', 'State Management', 'Utility CSS'],
+    stacks: ['Vue 3', 'Vue Router', 'Axios', 'Pinia', 'Tailwind CSS'],
+    stack_equivalent: ['JS Framework', 'Routing', 'API Communication', 'State Management', 'Utility CSS'],
   },
   {
     title: 'Infrastructure',
@@ -56,14 +56,14 @@ const skills = [
       'Self-Hosted',
       'Server Environment',
       'SSL',
-      'Containerization',
-      'Caching / PubSub',
+      'Container Deployment',
+      'Caching / Message Broker',
     ],
   },
   {
     title: 'IT Support',
-    stacks: ['Hardware Diagnostics', 'End User Support'],
-    stack_equivalent: ['Troubleshooting', 'Technical Assistance'],
+    stacks: ['Hardware Diagnostics', 'System Troubleshooting', 'End User Support'],
+    stack_equivalent: ['PC Repair & Diagnostics', 'Windows & Software Support', 'Technical Assistance'],
   },
 ];
 </script>

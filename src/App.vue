@@ -8,55 +8,55 @@
       class="fixed z-30 flex w-full items-center justify-between border-b border-gray-800 px-8 py-6 md:px-10"
       :class="{ 'bg-neon-purple/1 backdrop-blur-sm': hasScrolled }"
     >
-      <a href="#hero" class="group focus:outline-none">
+      <router-link to="#hero" class="group focus:outline-none">
         <h1 class="font-playfair text-xl font-bold tracking-wide">
           <span class="text-lg">Dennis</span>
           <span
-            class="group-focus:text-neon-cyan group-hover:text-neon-cyan text-2xl"
+            class="group-focus:text-neon-cyan group-hover:text-neon-cyan text-2xl transition-colors duration-300"
             :class="{ 'text-neon-cyan': activeSection === 'hero' }"
             >V</span
           >
           <span class="text-lg">Ampat</span>
         </h1>
-      </a>
+      </router-link>
 
       <!-- Desktop Menu -->
       <div class="hidden space-x-6 md:flex">
-        <a
-          href="#about"
+        <router-link
+          to="#about"
           class="hover:text-neon-pink focus:text-neon-pink tracking-widest uppercase focus:outline-none"
-          :class="{ 'neon-text': activeSection === 'about' }"
-          >About</a
+          :class="{ 'text-neon-pink animate-neon-boot': activeSection === 'about' }"
+          >About</router-link
         >
-        <a
-          href="#skills"
+        <router-link
+          to="#skills"
           class="hover:text-neon-pink focus:text-neon-pink tracking-widest uppercase focus:outline-none"
-          :class="{ 'neon-text': activeSection === 'skills' }"
-          >Skills</a
+          :class="{ 'text-neon-pink animate-neon-boot': activeSection === 'skills' }"
+          >Skills</router-link
         >
-        <a
-          href="#projects"
+        <router-link
+          to="#projects"
           class="hover:text-neon-pink focus:text-neon-pink tracking-widest uppercase focus:outline-none"
-          :class="{ 'neon-text': activeSection === 'projects' }"
-          >Projects</a
+          :class="{ 'text-neon-pink animate-neon-boot': activeSection === 'projects' }"
+          >Projects</router-link
         >
-        <a
-          href="#contact"
+        <router-link
+          to="#contact"
           class="hover:text-neon-pink focus:text-neon-pink tracking-widest uppercase focus:outline-none"
-          :class="{ 'neon-text': activeSection === 'contact' }"
-          >Contact</a
+          :class="{ 'text-neon-pink animate-neon-boot': activeSection === 'contact' }"
+          >Contact</router-link
         >
       </div>
 
       <div class="flex gap-2">
-        <a href="mailto:dennis.ampat@gmail.com">
-          <img src="@/assets/images/logos/icons8-email-50.png" alt="Email" class="h-6 w-6" />
+        <a href="mailto:dennis.ampat@gmail.com" class="group focus:outline-none">
+          <at-icon class="hover:text-neon-pink group-focus:text-neon-pink h-6 w-6 transition-colors duration-300"></at-icon>
         </a>
-        <a href="https://github.com/Resaizu" target="_blank" rel="noopener noreferrer">
-          <img src="@/assets/images/logos/icons8-github-48.png" alt="GitHub" class="h-6 w-6" />
+        <a href="https://github.com/Resaizu" target="_blank" rel="noopener noreferrer" class="group focus:outline-none">
+          <github-icon class="hover:text-neon-pink group-focus:text-neon-pink h-6 w-6 transition-colors duration-300"></github-icon>
         </a>
-        <a href="https://linkedin.com/in/dennis-v-ampat" target="_blank" rel="noopener noreferrer">
-          <img src="@/assets/images/logos/icons8-linkedin-50.png" alt="LinkedIn" class="h-6 w-6" />
+        <a href="https://linkedin.com/in/dennis-v-ampat" target="_blank" rel="noopener noreferrer" class="group focus:outline-none">
+          <linkedin-icon class="hover:text-neon-pink group-focus:text-neon-pink h-6 w-6 transition-colors duration-300"></linkedin-icon>
         </a>
       </div>
 
@@ -85,34 +85,34 @@
         class="absolute top-full left-0 w-full border-b border-gray-800 bg-gray-950 transition-all duration-300 ease-in-out md:hidden"
       >
         <div class="space-y-4 px-4 py-4">
-          <a
-            href="#about"
+          <router-link
+            to="#about"
             @click="closeMenu"
             class="block py-2 text-gray-200 transition-colors duration-200 hover:text-white"
           >
             About
-          </a>
-          <a
-            href="#skills"
+          </router-link>
+          <router-link
+            to="#skills"
             @click="closeMenu"
             class="block py-2 text-gray-200 transition-colors duration-200 hover:text-white"
           >
             Skills
-          </a>
-          <a
-            href="#projects"
+          </router-link>
+          <router-link
+            to="#projects"
             @click="closeMenu"
             class="block py-2 text-gray-200 transition-colors duration-200 hover:text-white"
           >
             Projects
-          </a>
-          <a
-            href="#contact"
+          </router-link>
+          <router-link
+            to="#contact"
             @click="closeMenu"
             class="block py-2 text-gray-200 transition-colors duration-200 hover:text-white"
           >
             Contact
-          </a>
+          </router-link>
         </div>
       </div>
     </nav>
@@ -120,6 +120,17 @@
     <div class="relative z-20 mx-auto max-w-6xl px-4 md:px-10">
       <router-view></router-view>
     </div>
+
+    <footer class="relative z-30 -mt-10 mb-5 block text-sm text-gray-300">
+      <div class="flex items-center justify-center gap-2">
+        <span>
+          Designed &amp; Developed by
+          <a href="https://github.com/Resaizu" target="_blank" class="text-neon-pink">Dennis V. Ampat</a>
+          <div class="h-2 w-2 rounded-full bg-neon-purple inline-block mx-2"></div>
+          2025.
+        </span>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -160,6 +171,9 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue';
 import { useIndexStore } from '@/stores';
+import AtIcon from '@/components/icons/AtIcon.vue';
+import GithubIcon from '@/components/icons/GithubIcon.vue';
+import LinkedinIcon from '@/components/icons/LinkedinIcon.vue';
 
 const store = useIndexStore();
 const isMenuOpen = ref(false);
