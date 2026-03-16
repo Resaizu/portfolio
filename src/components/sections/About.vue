@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-import NeonCard from '@/components/NeonCard.vue';
+import NeonCard from '@/components/reusable/NeonCard.vue';
 
 const experiences = [
   {

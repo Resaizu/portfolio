@@ -93,11 +93,7 @@
     </nav>
 
     <div class="relative z-20 max-w-6xl mx-auto px-4 md:px-10">
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -138,16 +134,13 @@
 </style>
 
 <script setup>
-import Hero from '@/views/Hero.vue';
-import About from '@/views/About.vue';
-import Skills from '@/views/Skills.vue';
-import Projects from '@/views/Projects.vue';
-import Contact from '@/views/Contact.vue';
-import { onMounted, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
+import { useIndexStore } from '@/stores';
 
+const store = useIndexStore();
 const isMenuOpen = ref(false);
 const hasScrolled = ref(false);
-const activeSection = ref('hero');
+const activeSection = computed(() => store.get_state('active_section'));
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
@@ -157,35 +150,11 @@ const closeMenu = () => {
   isMenuOpen.value = false;
 };
 
-const handleScroll = (sections) => {
+const handleScroll = () => {
   hasScrolled.value = window.scrollY > 50;
-  
-  if (window.innerWidth >= 768) {
-    let mostVisible = null
-    let highestPercent = 0
-
-    sections.forEach(section => {
-      const element = document.getElementById(section);
-      
-      if (!element) return;
-
-      const rect = element.getBoundingClientRect()
-      const visibleHeight = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0)
-      const visiblePercent = visibleHeight / rect.height
-
-      if (visiblePercent >= 0.49 && visiblePercent > highestPercent) {
-        highestPercent = visiblePercent
-        mostVisible = section
-      }
-    });
-
-    if (mostVisible) activeSection.value = mostVisible
-  }
 }
 
 onMounted(() => {
-  const sections = ['hero', 'about', 'skills', 'projects', 'contact'];
-  
-  window.addEventListener('scroll', () => handleScroll(sections));
+  window.addEventListener('scroll', () => handleScroll());
 })
 </script>
