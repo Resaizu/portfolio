@@ -37,8 +37,8 @@
 </template>
 
 <script setup>
-import Bullet from '@/components/Bullet.vue';
-import NeonCard from '@/components/NeonCard.vue';
+import Bullet from '@/components/reusable/Bullet.vue';
+import NeonCard from '@/components/reusable/NeonCard.vue';
 
 const skills = [
   {
@@ -62,13 +62,11 @@ const skills = [
     title: 'Frontend',
     stacks: [
       'Vue',
-      'Vue Router',
       'Pinia',
       'Tailwind CSS',
     ],
     stack_equivalent: [
       'JS Framework',
-      'Routing',
       'State Management',
       'Utility CSS',
     ]

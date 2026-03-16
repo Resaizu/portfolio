@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="flex flex-wrap justify-center gap-4 mt-6">
-      <neon-card :class="'flex-1'">
+      <neon-card :class="'flex-1 hover:shadow-[0_0_8px_0_var(--neon-purple)] transition-shadow duration-300'">
         <div class="flex flex-col justify-evenly p-6 h-full text-center">
           <div class="relative w-12 h-12 mx-auto">
             <img src="@/assets/images/logos/icons8-email-50.png" alt="email" class="w-full h-full">
@@ -26,17 +26,18 @@
             <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent"></div>
           </div>
 
-          <span class="text-neon-cyan text-xl">dennis.ampat@gmail.com</span>
+          <span class="text-neon-cyan text-xl h-[28px]">dennis.ampat@gmail.com</span>
 
           <a
             href="mailto:dennis.ampat@gmail.com"
-            class="bg-neon-green py-2 rounded-md text-lg text-gray-900 font-semibold tracking-wide"
+            class="bg-neon-green py-2 rounded-md text-lg text-gray-900 font-semibold tracking-wide
+            hover:bg-neon-cyan/90 transition-colors duration-300"
           >
             Email Me
           </a>
         </div>
       </neon-card>
-      <neon-card :class="'flex-1'">
+      <neon-card :class="'flex-1 hover:shadow-[0_0_8px_0_var(--neon-purple)] transition-shadow duration-300'">
         <div class="flex flex-col justify-evenly p-6 h-full text-center">
           <div class="relative w-12 h-12 mx-auto">
             <img src="@/assets/images/logos/icons8-github-48.png" alt="github" class="w-12 h-12 mx-auto">
@@ -46,17 +47,20 @@
             ></div>
           </div>
 
-          <span class="text-neon-cyan text-xl">github.com/Resaizu</span>
+          <span class="text-neon-cyan text-xl h-[28px]">github.com/Resaizu</span>
 
           <a
             href="https://github.com/Resaizu"
-            class="bg-neon-green py-2 rounded-md text-lg text-gray-900 font-semibold tracking-wide"
+            noreferrer
+            target="_blank"
+            class="bg-neon-green py-2 rounded-md text-lg text-gray-900 font-semibold tracking-wide
+            hover:bg-neon-cyan/90 transition-colors duration-300"
           >
-            View
+            View GitHub
           </a>
         </div>
       </neon-card>
-      <neon-card :class="'flex-1'">
+      <neon-card :class="'flex-1 hover:shadow-[0_0_8px_0_var(--neon-purple)] transition-shadow duration-300'">
         <div class="flex flex-col justify-evenly p-6 h-full text-center">
           <div class="relative w-12 h-12 mx-auto">
             <img src="@/assets/images/logos/icons8-linkedin-50.png" alt="linkedin" class="w-12 h-12 mx-auto">
@@ -66,13 +70,16 @@
             ></div>
           </div>
 
-          <span class="text-neon-cyan text-xl">linkedin.com/in/dennis-v-ampat</span>
+          <span class="text-neon-cyan text-xl h-[28px]">linkedin.com/in/dennis-v-ampat</span>
 
           <a
             href="https://linkedin.com/in/dennis-v-ampat"
-            class="bg-neon-green py-2 rounded-md text-lg text-gray-900 font-semibold tracking-wide"
+            noreferrer
+            target="_blank"
+            class="bg-neon-green py-2 rounded-md text-lg text-gray-900 font-semibold tracking-wide
+            hover:bg-neon-cyan/90 transition-colors duration-300"
           >
-            View
+            View LinkedIn
           </a>
         </div>
       </neon-card>
@@ -82,6 +89,6 @@
 </template>
 
 <script setup>
-import NeonCard from '@/components/NeonCard.vue';
-import Bullet from '@/components/Bullet.vue';
+import NeonCard from '@/components/reusable/NeonCard.vue';
+import Bullet from '@/components/reusable/Bullet.vue';
 </script>

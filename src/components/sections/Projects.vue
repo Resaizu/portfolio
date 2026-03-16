@@ -6,7 +6,10 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
-      <neon-card v-for="project in projects" :key="project">
+      <neon-card
+        v-for="project in projects" :key="project"
+        class="hover:shadow-[0_0_8px_0_var(--neon-purple)] transition-shadow duration-300"
+      >
         <div class="flex flex-col h-full p-2">
           <div class="relative h-48 shrink-0 overflow-hidden rounded-t-md">
             <img :src="project.image" class="w-full h-full object-cover" />
@@ -38,7 +41,7 @@
 </template>
 
 <script setup>
-import NeonCard from '@/components/NeonCard.vue';
+import NeonCard from '@/components/reusable/NeonCard.vue';
 import logisticsProject from '@/assets/images/projects/logistics.png'
 
 const projects = [
