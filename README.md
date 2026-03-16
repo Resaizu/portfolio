@@ -1,19 +1,30 @@
-# portfolio
+# My Portfolio
 
-This template should help get you started developing with Vue 3 in Vite.
+![Portfolio Preview](./src/assets/docs/Screenshot-2026-03-16-161932.png)
+
+This is my personal developer portfolio inspired with dark neon vibes.
+
+You are free to fork or use this project as a template for your own portfolio. If you do, please provide proper attribution by crediting **Dennis Ampat** and linking back to this repository.
+
+## Tech Stack
+
+- Vue
+- Vue Router
+- Pinia
+- Tailwind CSS
+
+## Theme Colors
+``` css
+  --neon-cyan: #00f5ff;
+  --neon-pink: #ff006e;
+  --neon-purple: #a855f7;
+  --neon-green: #00ff88;
+  --bg-deep: #020617;
+```
 
 ## Recommended IDE Setup
 
 [VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Recommended Browser Setup
-
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
 
 ## Customize configuration
 

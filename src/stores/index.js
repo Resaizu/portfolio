@@ -5,11 +5,11 @@ export const useIndexStore = defineStore('indexStore', {
     active_section: 'hero',
   }),
   actions: {
-    set_active_section (section) {
+    set_active_section(section) {
       this.active_section = section;
     },
   },
   getters: {
-    get_state: (state) => (state_name) => state[state_name]
+    get_state: (state) => (state_name) => state[state_name],
   },
 });

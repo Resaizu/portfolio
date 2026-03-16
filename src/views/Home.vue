@@ -1,5 +1,5 @@
 <template>
-  <div class="relative max-w-6xl mx-auto">
+  <div class="relative mx-auto max-w-6xl">
     <Hero />
     <About />
     <Skills />
@@ -21,12 +21,12 @@ const store = useIndexStore();
 
 const handleScroll = (sections) => {
   if (window.innerWidth >= 768) {
-    let mostVisible = null
-    let highestPercent = 0
+    let mostVisible = null;
+    let highestPercent = 0;
 
-    sections.forEach(section => {
+    sections.forEach((section) => {
       const element = document.getElementById(section);
-      
+
       if (!element) return;
 
       const rect = element.getBoundingClientRect();
@@ -43,11 +43,11 @@ const handleScroll = (sections) => {
       store.set_active_section(mostVisible);
     }
   }
-}
+};
 
 onMounted(() => {
   const sections = ['hero', 'about', 'skills', 'projects', 'contact'];
-  
+
   window.addEventListener('scroll', () => handleScroll(sections));
-})
+});
 </script>

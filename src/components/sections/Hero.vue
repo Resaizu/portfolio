@@ -1,28 +1,26 @@
 <template>
-  <section id="hero" class="px-4 py-20 min-h-screen 2560:min-h-[50vh]">
+  <section id="hero" class="2560:min-h-[50vh] min-h-screen px-4 py-20">
     <div class="flex flex-col justify-center pt-20">
+      <h1 class="font-playfair font-serif text-4xl leading-none font-bold md:text-7xl">Dennis Ampat</h1>
 
-      <h1 class="text-4xl md:text-7xl font-serif font-bold leading-none font-playfair">
-        Dennis Ampat
-      </h1>
+      <p class="text-neon-pink mt-3 text-lg font-semibold tracking-[3px] uppercase md:text-xl">Web Developer</p>
 
-      <p class="text-neon-pink tracking-[3px] mt-3 text-lg md:text-xl uppercase font-semibold">
-        Web Developer
-      </p>
-
-      <p class="max-w-lg text-gray-300 text-base leading-relaxed mt-3">
+      <p class="mt-3 max-w-lg text-base leading-relaxed text-gray-300">
         Backend-focused Web Developer specializing in Laravel and Vue. Building and maintaining web applications.
       </p>
 
-      <div class="flex gap-4 mt-10">
-        <a href="#projects" class="px-6 py-3 rounded border border-neon-purple hover:border-neon-pink
-          transition-colors font-medium font-playfair">
+      <div class="mt-10 flex gap-4">
+        <a
+          href="#projects"
+          class="border-neon-purple hover:border-neon-pink font-playfair rounded border px-6 py-3 font-medium transition-colors"
+        >
           View Projects
         </a>
 
-        <a href="#contact"
-          class="px-6 py-3 border border-gray-700 rounded hover:border-gray-400
-          transition-colors text-gray-300 font-playfair">
+        <a
+          href="#contact"
+          class="font-playfair rounded border border-gray-700 px-6 py-3 text-gray-300 transition-colors hover:border-gray-400"
+        >
           Get in Touch
         </a>
       </div>

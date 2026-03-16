@@ -1,17 +1,12 @@
 <template>
-  <div
-    class="relative backdrop-blur-md bg-gray-950/5 rounded-lg min-h-[280px]"
-    :class="custom_class"
-  >
+  <div class="relative min-h-[280px] rounded-lg bg-gray-950/5 backdrop-blur-md" :class="custom_class">
     <!-- border overlays -->
-    <div class="absolute inset-0 rounded-lg border border-3
-      border-t-neon-pink border-l-neon-pink
-      border-b-transparent border-r-transparent opacity-25 -z-10">
-    </div>
-    <div class="absolute inset-0 rounded-lg border border-3
-      border-b-neon-purple border-r-neon-purple
-      border-t-transparent border-l-transparent opacity-10 -z-10">
-    </div>
+    <div
+      class="border-t-neon-pink border-l-neon-pink absolute inset-0 -z-10 rounded-lg border border-3 border-r-transparent border-b-transparent opacity-25"
+    ></div>
+    <div
+      class="border-b-neon-purple border-r-neon-purple absolute inset-0 -z-10 rounded-lg border border-3 border-t-transparent border-l-transparent opacity-10"
+    ></div>
 
     <!-- slot -->
     <slot></slot>
@@ -23,7 +18,7 @@ const props = defineProps({
   custom_class: {
     required: false,
     type: String,
-    default: ''
-  }
-})
+    default: '',
+  },
+});
 </script>
