@@ -1,6 +1,6 @@
 # My Portfolio
 
-![Portfolio Preview](./src/assets/docs/Screenshot-2026-03-16-161932.png)
+![Portfolio Preview](./src/assets/images/docs/Screenshot-2026-03-16-161932.png)
 
 This is my personal developer portfolio inspired with dark neon vibes.
 
