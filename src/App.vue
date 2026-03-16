@@ -1,100 +1,136 @@
 <template>
-  <div class="bg-gray-950 text-gray-200 min-h-screen relative overflow-hidden">
-    <div class="absolute bg-black opacity-80 w-full h-full z-10"></div>
-    <div class="transform-gpu neon-bg"></div>
+  <div class="relative min-h-screen overflow-hidden bg-gray-950 text-gray-200">
+    <div class="absolute z-10 h-full w-full bg-black opacity-80"></div>
+    <div class="neon-bg transform-gpu"></div>
 
-    <nav id="navbar"
-      class="flex justify-between items-center px-8 md:px-10 py-6 fixed w-full z-30 border-b border-gray-800"
-      :class="{'bg-neon-purple/1 backdrop-blur-sm': hasScrolled}">
-      <a href="#hero" class="focus:outline-none group">
-        <h1 class="text-xl font-bold tracking-wide font-playfair">
+    <nav
+      id="navbar"
+      class="fixed z-30 flex w-full items-center justify-between border-b border-gray-800 px-8 py-6 md:px-10"
+      :class="{ 'bg-neon-purple/1 backdrop-blur-sm': hasScrolled }"
+    >
+      <router-link to="#hero" class="group focus:outline-none">
+        <h1 class="font-playfair text-xl font-bold tracking-wide">
           <span class="text-lg">Dennis</span>
           <span
-            class="text-2xl group-focus:text-neon-cyan group-hover:text-neon-cyan"
-            :class="{'text-neon-cyan': activeSection === 'hero'}"
-          >V</span>
+            class="group-focus:text-neon-cyan group-hover:text-neon-cyan text-2xl transition-colors duration-300"
+            :class="{ 'text-neon-cyan': activeSection === 'hero' }"
+            >V</span
+          >
           <span class="text-lg">Ampat</span>
         </h1>
-      </a>
+      </router-link>
 
       <!-- Desktop Menu -->
-      <div class="hidden md:flex space-x-6">
-        <a
-          href="#about"
-          class="tracking-widest uppercase hover:text-neon-pink focus:outline-none focus:text-neon-pink"
-          :class="{'neon-text': activeSection === 'about'}"
-        >About</a>
-        <a
-          href="#skills"
-          class="tracking-widest uppercase hover:text-neon-pink focus:outline-none focus:text-neon-pink"
-          :class="{'neon-text': activeSection === 'skills'}"
-        >Skills</a>
-        <a
-          href="#projects"
-          class="tracking-widest uppercase hover:text-neon-pink focus:outline-none focus:text-neon-pink"
-          :class="{'neon-text': activeSection === 'projects'}"
-        >Projects</a>
-        <a
-          href="#contact"
-          class="tracking-widest uppercase hover:text-neon-pink focus:outline-none focus:text-neon-pink"
-          :class="{'neon-text': activeSection === 'contact'}"
-        >Contact</a>
+      <div class="hidden space-x-6 md:flex">
+        <router-link
+          to="#about"
+          class="hover:text-neon-pink focus:text-neon-pink tracking-widest uppercase focus:outline-none"
+          :class="{ 'text-neon-pink animate-neon-boot': activeSection === 'about' }"
+          >About</router-link
+        >
+        <router-link
+          to="#skills"
+          class="hover:text-neon-pink focus:text-neon-pink tracking-widest uppercase focus:outline-none"
+          :class="{ 'text-neon-pink animate-neon-boot': activeSection === 'skills' }"
+          >Skills</router-link
+        >
+        <router-link
+          to="#projects"
+          class="hover:text-neon-pink focus:text-neon-pink tracking-widest uppercase focus:outline-none"
+          :class="{ 'text-neon-pink animate-neon-boot': activeSection === 'projects' }"
+          >Projects</router-link
+        >
+        <router-link
+          to="#contact"
+          class="hover:text-neon-pink focus:text-neon-pink tracking-widest uppercase focus:outline-none"
+          :class="{ 'text-neon-pink animate-neon-boot': activeSection === 'contact' }"
+          >Contact</router-link
+        >
       </div>
 
       <div class="flex gap-2">
-        <a href="mailto:dennis.ampat@gmail.com">
-          <img src="@/assets/images/logos/icons8-email-50.png" alt="Email" class="w-6 h-6">
+        <a href="mailto:dennis.ampat@gmail.com" class="group focus:outline-none">
+          <at-icon class="hover:text-neon-pink group-focus:text-neon-pink h-6 w-6 transition-colors duration-300"></at-icon>
         </a>
-        <a href="https://github.com/Resaizu" target="_blank" rel="noopener noreferrer">
-          <img src="@/assets/images/logos/icons8-github-48.png" alt="GitHub" class="w-6 h-6">
+        <a href="https://github.com/Resaizu" target="_blank" rel="noopener noreferrer" class="group focus:outline-none">
+          <github-icon class="hover:text-neon-pink group-focus:text-neon-pink h-6 w-6 transition-colors duration-300"></github-icon>
         </a>
-        <a href="https://linkedin.com/in/dennis-v-ampat" target="_blank" rel="noopener noreferrer">
-          <img src="@/assets/images/logos/icons8-linkedin-50.png" alt="LinkedIn" class="w-6 h-6">
+        <a href="https://linkedin.com/in/dennis-v-ampat" target="_blank" rel="noopener noreferrer" class="group focus:outline-none">
+          <linkedin-icon class="hover:text-neon-pink group-focus:text-neon-pink h-6 w-6 transition-colors duration-300"></linkedin-icon>
         </a>
       </div>
 
       <!-- Mobile Menu Button -->
-      <button type="button" @click="toggleMenu"
-        class="md:hidden text-gray-200 hover:text-white focus:outline-none focus:text-white
-          transition-colors duration-200"
-        aria-label="Toggle menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path v-if="!isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16">
-          </path>
-          <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-          </path>
+      <button
+        type="button"
+        @click="toggleMenu"
+        class="text-gray-200 transition-colors duration-200 hover:text-white focus:text-white focus:outline-none md:hidden"
+        aria-label="Toggle menu"
+      >
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            v-if="!isMenuOpen"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+          <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
 
       <!-- Mobile Menu -->
-      <div v-show="isMenuOpen"
-        class="md:hidden absolute top-full left-0 w-full bg-gray-950
-          border-b border-gray-800 transition-all duration-300 ease-in-out">
-        <div class="px-4 py-4 space-y-4">
-          <a href="#about" @click="closeMenu"
-            class="block text-gray-200 hover:text-white transition-colors duration-200 py-2">
+      <div
+        v-show="isMenuOpen"
+        class="absolute top-full left-0 w-full border-b border-gray-800 bg-gray-950 transition-all duration-300 ease-in-out md:hidden"
+      >
+        <div class="space-y-4 px-4 py-4">
+          <router-link
+            to="#about"
+            @click="closeMenu"
+            class="block py-2 text-gray-200 transition-colors duration-200 hover:text-white"
+          >
             About
-          </a>
-          <a href="#skills" @click="closeMenu"
-            class="block text-gray-200 hover:text-white transition-colors duration-200 py-2">
+          </router-link>
+          <router-link
+            to="#skills"
+            @click="closeMenu"
+            class="block py-2 text-gray-200 transition-colors duration-200 hover:text-white"
+          >
             Skills
-          </a>
-          <a href="#projects" @click="closeMenu"
-            class="block text-gray-200 hover:text-white transition-colors duration-200 py-2">
+          </router-link>
+          <router-link
+            to="#projects"
+            @click="closeMenu"
+            class="block py-2 text-gray-200 transition-colors duration-200 hover:text-white"
+          >
             Projects
-          </a>
-          <a href="#contact" @click="closeMenu"
-            class="block text-gray-200 hover:text-white transition-colors duration-200 py-2">
+          </router-link>
+          <router-link
+            to="#contact"
+            @click="closeMenu"
+            class="block py-2 text-gray-200 transition-colors duration-200 hover:text-white"
+          >
             Contact
-          </a>
+          </router-link>
         </div>
       </div>
     </nav>
 
-    <div class="relative z-20 max-w-6xl mx-auto px-4 md:px-10">
+    <div class="relative z-20 mx-auto max-w-6xl px-4 md:px-10">
       <router-view></router-view>
     </div>
+
+    <footer class="relative z-30 -mt-10 mb-5 block text-sm text-gray-300">
+      <div class="flex items-center justify-center gap-2">
+        <span>
+          Original Work by 
+          <a href="https://github.com/Resaizu" target="_blank" class="text-neon-pink">Dennis V. Ampat</a>
+          <div class="h-2 w-2 rounded-full bg-neon-purple inline-block mx-2"></div>
+          2025.
+        </span>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -107,8 +143,7 @@
   background:
     radial-gradient(circle at 20% 30%, var(--neon-purple) 0%, transparent 40%),
     radial-gradient(circle at 80% 40%, var(--neon-cyan) 0%, transparent 40%),
-    radial-gradient(circle at 50% 80%, var(--neon-pink) 0%, transparent 40%),
-    var(--bg-deep);
+    radial-gradient(circle at 50% 80%, var(--neon-pink) 0%, transparent 40%), var(--bg-deep);
 
   filter: blur(140px);
   animation: drift 60s linear infinite alternate;
@@ -136,6 +171,9 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue';
 import { useIndexStore } from '@/stores';
+import AtIcon from '@/components/icons/AtIcon.vue';
+import GithubIcon from '@/components/icons/GithubIcon.vue';
+import LinkedinIcon from '@/components/icons/LinkedinIcon.vue';
 
 const store = useIndexStore();
 const isMenuOpen = ref(false);
@@ -152,9 +190,9 @@ const closeMenu = () => {
 
 const handleScroll = () => {
   hasScrolled.value = window.scrollY > 50;
-}
+};
 
 onMounted(() => {
   window.addEventListener('scroll', () => handleScroll());
-})
+});
 </script>
