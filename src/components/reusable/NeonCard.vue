@@ -1,3 +1,13 @@
+<script setup>
+const props = defineProps({
+  custom_class: {
+    required: false,
+    type: String,
+    default: '',
+  },
+});
+</script>
+
 <template>
   <div class="relative min-h-[280px] rounded-lg bg-gray-950/5 backdrop-blur-md" :class="custom_class">
     <!-- border overlays -->
@@ -12,13 +22,3 @@
     <slot></slot>
   </div>
 </template>
-
-<script setup>
-const props = defineProps({
-  custom_class: {
-    required: false,
-    type: String,
-    default: '',
-  },
-});
-</script>

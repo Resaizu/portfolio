@@ -1,7 +1,3 @@
-<template>
-  <span :class="tailwindClass"></span>
-</template>
-
 <script setup>
 const props = defineProps({
   color: { type: String, default: 'green' },
@@ -28,3 +24,7 @@ const colorMap = {
 
 const tailwindClass = `w-1.5 h-1.5 rounded-full shrink-0 ${colorMap[props.color].bg} ${colorMap[props.color].shadow}`;
 </script>
+
+<template>
+  <span :class="tailwindClass"></span>
+</template>

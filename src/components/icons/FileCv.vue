@@ -1,3 +1,12 @@
+<script setup>
+const props = defineProps({
+  class: {
+    type: String,
+    default: '',
+  },
+});
+</script>
+
 <template>
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -16,12 +25,3 @@
     <path d="M13 11l1.5 6l1.5 -6" />
   </svg>
 </template>
-
-<script setup>
-const props = defineProps({
-  class: {
-    type: String,
-    default: '',
-  },
-});
-</script>
