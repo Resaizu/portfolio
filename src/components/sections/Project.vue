@@ -53,7 +53,7 @@ onMounted(() => {
           :href="data.live_link"
           noreferrer
           target="_blank"
-          class="border-neon-green bg-neon-green/5 rounded-lg border py-2 px-4 font-semibold hover:shadow-[0_0_8px_0_var(--neon-green)] focus:outline-none focus:shadow-[0_0_8px_0_var(--neon-green)] transition duration-300"
+          class="border-neon-green bg-neon-green/5 rounded-lg border px-4 py-2 font-semibold transition duration-300 hover:shadow-[0_0_8px_0_var(--neon-green)] focus:shadow-[0_0_8px_0_var(--neon-green)] focus:outline-none"
         >
           View Live
         </a>
@@ -114,22 +114,25 @@ onMounted(() => {
         :space-between="10"
         :modules="modules"
       >
-        <swiper-slide v-for="(image, i) in data.images" :key="i"
-        class="cursor-pointer rounded-lg overflow-hidden"
-        :class="{'border border-neon-pink border-2': i === activeSliderIndex}">
-          <img :src="image.path" :alt="image.path" class="h-22 md:h-[196px] w-full object-cover" loading="lazy" />
+        <swiper-slide
+          v-for="(image, i) in data.images"
+          :key="i"
+          class="cursor-pointer overflow-hidden rounded-lg"
+          :class="{ 'border-neon-pink border border-2': i === activeSliderIndex }"
+        >
+          <img :src="image.path" :alt="image.path" class="h-22 w-full object-cover md:h-[196px]" loading="lazy" />
         </swiper-slide>
       </swiper>
     </div>
 
     <div class="flex flex-wrap justify-between gap-4">
-      <div class="bg-neon-purple/5 flex-1 rounded-lg border border-neon-pink/50 p-4">
-        <h1 class="text-xl font-bold text-neon-pink tracking-wider">Key Features</h1>
+      <div class="bg-neon-purple/5 border-neon-pink/50 flex-1 rounded-lg border p-4">
+        <h1 class="text-neon-pink text-xl font-bold tracking-wider">Key Features</h1>
         <ul class="mt-2 px-2">
           <li
             v-for="keyFeature in data.key_features"
             :key="keyFeature"
-            class="text-lg flex gap-3 items-center text-gray-300"
+            class="flex items-center gap-3 text-lg text-gray-300"
           >
             <bullet></bullet>
             {{ keyFeature }}
@@ -137,14 +140,10 @@ onMounted(() => {
         </ul>
       </div>
 
-      <div class="bg-neon-purple/5 w-full md:w-1/3 rounded-lg border border-neon-pink/50 p-4">
-        <h1 class="text-xl font-bold text-neon-pink tracking-wider">Tech Stack</h1>
+      <div class="bg-neon-purple/5 border-neon-pink/50 w-full rounded-lg border p-4 md:w-1/3">
+        <h1 class="text-neon-pink text-xl font-bold tracking-wider">Tech Stack</h1>
         <ul class="mt-2 px-2">
-          <li
-            v-for="stack in data.tech_stack"
-            :key="stack"
-            class="text-lg flex gap-3 items-center text-gray-300"
-          >
+          <li v-for="stack in data.tech_stack" :key="stack" class="flex items-center gap-3 text-lg text-gray-300">
             <bullet></bullet>
             <span>{{ stack }}</span>
           </li>
@@ -152,9 +151,9 @@ onMounted(() => {
       </div>
     </div>
 
-    <div class="bg-neon-purple/5 rounded-lg border border-neon-pink/50 p-4">
-      <h1 class="text-xl font-bold text-neon-pink tracking-wider">About the Project</h1>
-      <p class="text-gray-300 mt-2 text-justify leading-relaxed">{{ data.about }}</p>
+    <div class="bg-neon-purple/5 border-neon-pink/50 rounded-lg border p-4">
+      <h1 class="text-neon-pink text-xl font-bold tracking-wider">About the Project</h1>
+      <p class="mt-2 text-justify leading-relaxed text-gray-300">{{ data.about }}</p>
     </div>
   </div>
 </template>
