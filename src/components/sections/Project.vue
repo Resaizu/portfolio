@@ -78,7 +78,7 @@ onMounted(() => {
           class="border-neon-pink h-[22rem] rounded-t-lg border"
         >
           <swiper-slide v-for="image in data.images" :key="image">
-            <img :src="image.name" :alt="image.name" class="h-full w-full object-contain" />
+            <img :src="image.path" :alt="image.path" class="h-full w-full object-contain" loading="lazy" />
             <div v-if="image.description" class="absolute bottom-0 left-0 h-1/4 w-full">
               <div class="bg-root-deep/10 to-bg-black absolute top-0 h-full w-full"></div>
               <p
@@ -117,7 +117,7 @@ onMounted(() => {
         <swiper-slide v-for="(image, i) in data.images" :key="i"
         class="cursor-pointer rounded-lg overflow-hidden"
         :class="{'border border-neon-pink border-2': i === activeSliderIndex}">
-          <img :src="image.name" :alt="image.name" class="h-22 md:h-[196px] w-full object-cover" />
+          <img :src="image.path" :alt="image.path" class="h-22 md:h-[196px] w-full object-cover" loading="lazy" />
         </swiper-slide>
       </swiper>
     </div>

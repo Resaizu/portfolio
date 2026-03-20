@@ -6,26 +6,26 @@ export const useIndexStore = defineStore('indexStore', {
     project_list: [
       {
         title: 'Example',
-        slug: 'example', // Must be the same folder on assets ex. /assets/images/projects/example case sensitive
+        slug: 'example', // Must be the same folder on assets ex. /assets/images/projects/example case sensitiv
         images: [
           {
-            name: 'bytewebster.png', // Case Sensitive
+            path: '/example/bytewebster.png', // Case Sensitive
             description: 'Landing',
           },
           {
-            name: 'landmark.png', // Case Sensitive
+            path: '/example/landmark.png', // Case Sensitive
             description: '',
           },
           {
-            name: 'loople.png', // Case Sensitive
+            path: '/example/loople.png', // Case Sensitive
             description: '',
           },
           {
-            name: 'envato.jpg', // Case Sensitive
+            path: '/example/envato.jpg', // Case Sensitive
             description: '',
           },
           {
-            name: 'monst.jpg', // Case Sensitive
+            path: '/example/monst.jpg', // Case Sensitive
             description: '',
           },
         ],
@@ -56,23 +56,23 @@ export const useIndexStore = defineStore('indexStore', {
         slug: 'another-example', // Must be the same folder on assets ex. /assets/images/projects/another-example case sensitive
         images: [
           {
-            name: 'another-bytewebster.png', // Case Sensitive
+            path: '/another-example/another-bytewebster.png', // Case Sensitive
             description: 'Landing',
           },
           {
-            name: 'another-landmark.png', // Case Sensitive
+            path: '/another-example/another-landmark.png', // Case Sensitive
             description: '',
           },
           {
-            name: 'another-loople.png', // Case Sensitive
+            path: '/another-example/another-loople.png', // Case Sensitive
             description: '',
           },
           {
-            name: 'another-envato.jpg', // Case Sensitive
+            path: '/another-example/another-envato.jpg', // Case Sensitive
             description: '',
           },
           {
-            name: 'another-monst.jpg', // Case Sensitive
+            path: '/another-example/another-monst.jpg', // Case Sensitive
             description: '',
           },
         ],
@@ -103,14 +103,29 @@ export const useIndexStore = defineStore('indexStore', {
     set_active_section(section) {
       this.active_section = section;
     },
-    async importImages(slug, image) {
-      const modules = import.meta.glob('/src/assets/images/projects/**/*', { eager: false, import: 'default' });
-      // Make eager: true if in dev mode
+    resolveImages () { 
+      const imageModules = import.meta.glob(
+        '/src/assets/images/projects/**/*.{jpg,png,webp}', // Add image extensions as needed
+        { eager: true, import: 'default' }
+      );
 
-      const path = '/src/assets/images/projects';
+      const basePath =  '/src/assets/images/projects';
 
-      const loader = modules[`${path}/${slug}/${image}`];
-      return loader ? await loader() : null;
-    }
+      this.project_list = this.project_list.map(project => ({
+        ...project,
+        images: project.images.map(image => ({
+          ...image,
+          path: imageModules[basePath + image.path]
+        }))
+      }))
+    },
   },
 });
+
+// To Resolve issues on HMR
+if (import.meta.hot) {
+  import.meta.hot.accept(() => {
+    const store = useIndexStore()
+    store.resolveImages()
+  })
+}

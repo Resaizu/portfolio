@@ -6,21 +6,12 @@ import { useRoute } from 'vue-router';
 import { useIndexStore } from '@/stores';
 
 const store = useIndexStore();
-
-const projectList = ref(store.project_list);
-
 const route = useRoute();
+
 const activeProject = ref({});
 
 onMounted(async () => {
-  activeProject.value = projectList.value.find((project) => project.slug == route.params.slug);
-  
-  activeProject.value.images = await Promise.all(
-    activeProject.value.images.map(async (image) => ({
-      ...image,
-      name: await store.importImages(activeProject.value.slug, image.name)
-    }))
-  )
+  activeProject.value = store.project_list.find((project) => project.slug == route.params.slug);
 });
 </script>
 
