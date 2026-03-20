@@ -2,10 +2,8 @@
 
 ![Portfolio Preview](./public/preview.png)
 
-This is my personal developer portfolio inspired with dark neon vibes.
-
-You are free to fork or use this project as a template for your own portfolio.
-If you do, please consider crediting **Dennis Ampat** and linking back to this repository.
+A portfolio template featuring a dark neon-inspired design, built with Vue and Tailwind CSS.
+This can be used as a base for your own portfolio, with optional attribution to Dennis Ampat through a credit or link back to this repository.
 
 ## Tech Stack
 
@@ -128,6 +126,7 @@ project_list: [
 ### Notes
 - Value must be a string: `true` or `false`  
 - If not set, deployment will NOT run (default)
+- If you are using other platforms (Vercel, Netlify, AWS, cPanel, etc.), you may disable the GitHub Pages workflow to avoid unnecessary builds.
 
 ## License
 
