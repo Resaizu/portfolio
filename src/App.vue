@@ -4,8 +4,10 @@ import { useIndexStore } from '@/stores';
 import AtIcon from '@/components/icons/AtIcon.vue';
 import GithubIcon from '@/components/icons/GithubIcon.vue';
 import LinkedinIcon from '@/components/icons/LinkedinIcon.vue';
+import { useRoute } from 'vue-router';
 
 const store = useIndexStore();
+const route = useRoute();
 const isMenuOpen = ref(false);
 const hasScrolled = ref(false);
 const activeSection = computed(() => store.active_section);
@@ -23,6 +25,8 @@ const handleScroll = () => {
 };
 
 onMounted(() => {
+  store.resolveImages();
+
   window.addEventListener('scroll', () => handleScroll());
 });
 </script>
@@ -35,7 +39,7 @@ onMounted(() => {
     <nav id="navbar"
       class="fixed z-30 flex w-full items-center justify-between border-b border-gray-800 px-8 py-6 md:px-10"
       :class="{ 'bg-neon-purple/1 backdrop-blur-sm': hasScrolled }">
-      <router-link to="/" class="group focus:outline-none">
+      <router-link :to="route.meta.name === 'project' ? '/#projects' : '/'" @click="$event.currentTarget.blur()" class="group focus:outline-none">
         <h1 class="font-playfair text-xl font-bold tracking-wide">
           <span class="text-lg">Dennis</span>
           <span class="group-focus:text-neon-cyan group-hover:text-neon-cyan text-2xl transition-colors duration-300"
@@ -45,7 +49,7 @@ onMounted(() => {
       </router-link>
 
       <!-- Desktop Menu -->
-      <div class="hidden space-x-6 md:flex">
+      <div v-if="route.path === '/'" class="hidden space-x-6 md:flex">
         <router-link to="#about"
           class="hover:text-neon-pink focus:text-neon-pink tracking-widest uppercase focus:outline-none"
           :class="{ 'text-neon-pink animate-neon-boot': activeSection === 'about' }">About</router-link>

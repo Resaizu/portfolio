@@ -1,26 +1,11 @@
 <script setup>
 import NeonCard from '@/components/reusable/NeonCard.vue';
 import { useIndexStore } from '@/stores';
-import { onMounted, ref } from 'vue';
+import { computed } from 'vue';
 
 const store = useIndexStore();
 
-const projects = ref(store.project_list);
-
-onMounted(async () => {
-  projects.value = await Promise.all(
-    projects.value.map(async (project) => {
-      const first = project.images[0];
-
-      const loaded = await store.importImages(project.slug, first.name);
-
-      return {
-        ...project,
-        images: [{ ...first, name: loaded }, ...project.images.slice(1)],
-      };
-    }),
-  );
-});
+const projects = computed(() => store.project_list);
 </script>
 
 <template>
@@ -38,7 +23,7 @@ onMounted(async () => {
       >
         <div class="flex h-full flex-col p-2">
           <div class="relative h-48 shrink-0 overflow-hidden rounded-t-md">
-            <img :src="project.images[0].name" class="h-full w-full object-cover" />
+            <img :src="project.images[0].path" class="h-full w-full object-cover" loading="lazy" />
 
             <div class="bg-neon-purple/20 absolute inset-0 mix-blend-color"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent"></div>
