@@ -1,3 +1,7 @@
+<script setup>
+import NeonCard from '@/components/reusable/NeonCard.vue';
+</script>
+
 <template>
   <section class="flex flex-col items-center gap-6 py-12 mt-16">
     <h1 class="text-4xl font-bold tracking-widest font-playfair text-gray-200 uppercase text-center">404 - Not Found</h1>
@@ -21,7 +25,3 @@
     </neon-card>
   </section>
 </template>
-
-<script setup>
-import NeonCard from '@/components/reusable/NeonCard.vue';
-</script>

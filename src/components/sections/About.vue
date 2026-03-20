@@ -1,3 +1,15 @@
+<script setup>
+import NeonCard from '@/components/reusable/NeonCard.vue';
+
+const experiences = [
+  {
+    company: 'Tat Sing International Logistics Corp.',
+    role: 'Web Developer | IT Support Technician',
+    years: 'March 2022 - Current',
+  },
+];
+</script>
+
 <template>
   <section id="about" class="neon-line 2560:min-h-[50vh] mx-auto min-h-[80vh] max-w-6xl px-4 py-16">
     <div class="flex gap-3 pt-20">
@@ -25,15 +37,3 @@
     </div>
   </section>
 </template>
-
-<script setup>
-import NeonCard from '@/components/reusable/NeonCard.vue';
-
-const experiences = [
-  {
-    company: 'Tat Sing International Logistics Corp.',
-    role: 'Web Developer | IT Support Technician',
-    years: 'March 2022 - Current',
-  },
-];
-</script>

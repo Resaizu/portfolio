@@ -1,13 +1,3 @@
-<template>
-  <div class="relative mx-auto max-w-6xl">
-    <Hero />
-    <About />
-    <Skills />
-    <Projects />
-    <Contact />
-  </div>
-</template>
-
 <script setup>
 import Hero from '@/components/sections/Hero.vue';
 import About from '@/components/sections/About.vue';
@@ -51,3 +41,13 @@ onMounted(() => {
   window.addEventListener('scroll', () => handleScroll(sections));
 });
 </script>
+
+<template>
+  <div class="relative mx-auto max-w-6xl">
+    <Hero />
+    <About />
+    <Skills />
+    <Projects />
+    <Contact />
+  </div>
+</template>
