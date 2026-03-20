@@ -12,11 +12,11 @@ onMounted(async () => {
     projects.value.map(async (project) => {
       const first = project.images[0];
 
-      const loaded = await store.importImages(project.slug, first.path);
+      const loaded = await store.importImages(project.slug, first.name);
 
       return {
         ...project,
-        images: [{ ...first, path: loaded }, ...project.images.slice(1)],
+        images: [{ ...first, name: loaded }, ...project.images.slice(1)],
       };
     }),
   );
@@ -38,7 +38,7 @@ onMounted(async () => {
       >
         <div class="flex h-full flex-col p-2">
           <div class="relative h-48 shrink-0 overflow-hidden rounded-t-md">
-            <img :src="project.images[0].path" class="h-full w-full object-cover" />
+            <img :src="project.images[0].name" class="h-full w-full object-cover" />
 
             <div class="bg-neon-purple/20 absolute inset-0 mix-blend-color"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent"></div>

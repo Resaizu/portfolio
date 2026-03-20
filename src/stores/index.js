@@ -9,23 +9,23 @@ export const useIndexStore = defineStore('indexStore', {
         slug: 'example', // Must be the same folder on assets ex. /assets/images/projects/example case sensitive
         images: [
           {
-            path: 'bytewebster.png', // Case Sensitive
+            name: 'bytewebster.png', // Case Sensitive
             description: 'Landing',
           },
           {
-            path: 'landmark.png', // Case Sensitive
+            name: 'landmark.png', // Case Sensitive
             description: '',
           },
           {
-            path: 'loople.png', // Case Sensitive
+            name: 'loople.png', // Case Sensitive
             description: '',
           },
           {
-            path: 'envato.jpg', // Case Sensitive
+            name: 'envato.jpg', // Case Sensitive
             description: '',
           },
           {
-            path: 'monst.jpg', // Case Sensitive
+            name: 'monst.jpg', // Case Sensitive
             description: '',
           },
         ],
@@ -56,23 +56,23 @@ export const useIndexStore = defineStore('indexStore', {
         slug: 'another-example', // Must be the same folder on assets ex. /assets/images/projects/another-example case sensitive
         images: [
           {
-            path: 'another-bytewebster.png', // Case Sensitive
+            name: 'another-bytewebster.png', // Case Sensitive
             description: 'Landing',
           },
           {
-            path: 'another-landmark.png', // Case Sensitive
+            name: 'another-landmark.png', // Case Sensitive
             description: '',
           },
           {
-            path: 'another-loople.png', // Case Sensitive
+            name: 'another-loople.png', // Case Sensitive
             description: '',
           },
           {
-            path: 'another-envato.jpg', // Case Sensitive
+            name: 'another-envato.jpg', // Case Sensitive
             description: '',
           },
           {
-            path: 'another-monst.jpg', // Case Sensitive
+            name: 'another-monst.jpg', // Case Sensitive
             description: '',
           },
         ],

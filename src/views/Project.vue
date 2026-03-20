@@ -18,7 +18,7 @@ onMounted(async () => {
   activeProject.value.images = await Promise.all(
     activeProject.value.images.map(async (image) => ({
       ...image,
-      path: await store.importImages(activeProject.value.slug, image.path)
+      name: await store.importImages(activeProject.value.slug, image.name)
     }))
   )
 });
