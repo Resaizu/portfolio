@@ -24,7 +24,7 @@ const skills = [
       },
       {
         name: 'MySQL',
-        desc: 'Authentication',
+        desc: 'Relational Database',
       },
     ],
   },
