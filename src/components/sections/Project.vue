@@ -53,7 +53,7 @@ onMounted(() => {
           :href="data.live_link"
           noreferrer
           target="_blank"
-          class="border-neon-green bg-neon-green/5 rounded-lg border px-4 py-2 font-semibold transition duration-300 hover:shadow-[0_0_8px_0_var(--neon-green)] focus:shadow-[0_0_8px_0_var(--neon-green)] focus:outline-none"
+          class="border-neon-green bg-neon-green/5 rounded-lg border px-4 py-2 font-semibold transition duration-300 hover:shadow-neon-green-sm focus:shadow-neon-green-sm focus:outline-none"
         >
           View Live
         </a>
@@ -62,7 +62,7 @@ onMounted(() => {
 
     <div class="w-full">
       <div
-        class="bg-root-deep/20 border-neon-pink relative h-[24rem] rounded-lg border shadow-[0_0_8px_0_var(--neon-pink)]"
+        class="bg-root-deep/20 border-neon-pink relative h-[24rem] rounded-lg border shadow-neon-pink-sm"
       >
         <!-- main -->
         <swiper
@@ -97,7 +97,7 @@ onMounted(() => {
             class="h-3 w-3 rounded-full"
             :class="[
               i === activeSliderIndex
-                ? 'bg-neon-pink shadow-[0_0_8px_var(--neon-pink)] shadow-[0_0_10px_0_var(--neon-pink)]'
+                ? 'bg-neon-pink shadow-neon-pink-sm shadow-neon-pink-md'
                 : 'bg-neon-purple/50',
             ]"
           >

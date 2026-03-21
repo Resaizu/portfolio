@@ -47,7 +47,21 @@ npm run dev
 npm run build
 ```
 
-## Add or edit projects
+## Add or edit Experience - About Section
+
+- Navigate to `/src/components/sections/About.vue`
+
+Update the `experiences` array.
+You can also change pills or make it empty.
+
+## Add or edit Skills
+
+- Navigate to `/src/components/sections/Skills.vue`
+
+Update the `skills` array.  
+Do not change existing keys.
+
+## Add or edit Projects
 
 - Navigate to `/src/stores/index.js`
 

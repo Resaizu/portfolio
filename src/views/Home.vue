@@ -4,7 +4,7 @@ import About from '@/components/sections/About.vue';
 import Skills from '@/components/sections/Skills.vue';
 import Projects from '@/components/sections/Projects.vue';
 import Contact from '@/components/sections/Contact.vue';
-import { onMounted, ref } from 'vue';
+import { onMounted } from 'vue';
 import { useIndexStore } from '@/stores';
 
 const store = useIndexStore();
@@ -38,7 +38,7 @@ const handleScroll = (sections) => {
 onMounted(() => {
   const sections = ['hero', 'about', 'skills', 'projects', 'contact'];
 
-  window.addEventListener('scroll', () => handleScroll(sections));
+  if (window.innerWidth >= 768) window.addEventListener('scroll', () => handleScroll(sections));
 });
 </script>
 

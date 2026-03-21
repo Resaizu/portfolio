@@ -6,19 +6,19 @@ const props = defineProps({
 const colorMap = {
   green: {
     bg: 'bg-neon-green',
-    shadow: 'shadow-[0_0_8px_var(--neon-green),0_0_10px_var(--neon-green)]',
+    shadow: 'shadow-neon-green-sm shadow-neon-green-md',
   },
   pink: {
     bg: 'bg-neon-pink',
-    shadow: 'shadow-[0_0_8px_var(--neon-pink),0_0_10px_var(--neon-pink)]',
+    shadow: 'shadow-neon-pink-sm shadow-neon-pink-md',
   },
   purple: {
     bg: 'bg-neon-purple',
-    shadow: 'shadow-[0_0_8px_var(--neon-purple),0_0_10px_var(--neon-purple)]',
+    shadow: 'shadow-neon-purple-sm shadow-neon-purple-md',
   },
   cyan: {
     bg: 'bg-neon-cyan',
-    shadow: 'shadow-[0_0_8px_var(--neon-cyan),0_0_10px_var(--neon-cyan)]',
+    shadow: 'shadow-neon-cyan-sm shadow-neon-cyan-md',
   },
 };
 

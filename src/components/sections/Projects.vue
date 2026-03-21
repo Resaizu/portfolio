@@ -48,13 +48,13 @@ const projects = computed(() => store.project_list);
               <a
                 v-if="project.live_link"
                 :href="project.live_link"
-                class="bg-neon-green/5 border-neon-green text-neon-green rounded-md border px-4 py-2 hover:shadow-[0_0_8px_0_var(--neon-green)] focus:shadow-[0_0_8px_0_var(--neon-green)] focus:outline-none"
+                class="bg-neon-green/5 border-neon-green text-neon-green rounded-md border px-4 py-2 hover:shadow-neon-green-sm focus:shadow-neon-green-sm focus:outline-none"
                 >View Live</a
               >
 
               <router-link
                 :to="`/project/${project.slug}`"
-                class="bg-neon-pink/5 border-neon-pink text-neon-pink rounded-md border px-4 py-2 hover:shadow-[0_0_8px_0_var(--neon-pink)] focus:shadow-[0_0_8px_0_var(--neon-pink)] focus:outline-none"
+                class="bg-neon-pink/5 border-neon-pink text-neon-pink rounded-md border px-4 py-2 hover:shadow-neon-pink-sm focus:shadow-neon-pink-sm focus:outline-none"
               >
                 View Project
               </router-link>
