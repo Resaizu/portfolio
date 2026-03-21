@@ -55,7 +55,7 @@ const onLeave = (div) => {
         @mouseleave="onLeave('email')"
         @focus="onHover('email')"
         @blur="onLeave('email')"
-        class="bg-root-deep/20 border-neon-purple group relative flex items-center gap-4 rounded-lg border p-4 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-[0_0_8px_0_var(--neon-purple)] focus:translate-y-[-2px] focus:shadow-[0_0_8px_0_var(--neon-purple)] focus:outline-none"
+        class="bg-root-deep/20 border-neon-purple group relative flex items-center gap-4 rounded-lg border p-4 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-neon-purple-sm focus:translate-y-[-2px] focus:shadow-neon-purple-sm focus:outline-none"
       >
         <div class="bg-neon-purple/10 rounded-md p-4">
           <at-icon class="text-neon-purple h-6 w-6"></at-icon>
@@ -85,7 +85,7 @@ const onLeave = (div) => {
         @mouseleave="onLeave('resume')"
         @focus="onHover('resume')"
         @blur="onLeave('resume')"
-        class="bg-root-deep/20 border-neon-green group relative flex items-center gap-4 rounded-lg border p-4 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-[0_0_8px_0_var(--neon-green)] focus:translate-y-[-2px] focus:shadow-[0_0_8px_0_var(--neon-green)] focus:outline-none"
+        class="bg-root-deep/20 border-neon-green group relative flex items-center gap-4 rounded-lg border p-4 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-neon-green-sm focus:translate-y-[-2px] focus:shadow-neon-green-sm focus:outline-none"
       >
         <div class="bg-neon-green/10 rounded-md p-4">
           <file-cv class="text-neon-green h-6 w-6"></file-cv>
@@ -116,7 +116,7 @@ const onLeave = (div) => {
         @mouseleave="onLeave('github')"
         @focus="onHover('github')"
         @blur="onLeave('github')"
-        class="bg-root-deep/20 border-neon-pink group relative flex items-center gap-4 rounded-lg border p-4 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-[0_0_8px_0_var(--neon-pink)] focus:translate-y-[-2px] focus:shadow-[0_0_8px_0_var(--neon-pink)] focus:outline-none"
+        class="bg-root-deep/20 border-neon-pink group relative flex items-center gap-4 rounded-lg border p-4 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-neon-pink-sm focus:translate-y-[-2px] focus:shadow-neon-pink-sm focus:outline-none"
       >
         <div class="bg-neon-pink/10 rounded-md p-4">
           <github-icon class="text-neon-pink h-6 w-6"></github-icon>
@@ -147,7 +147,7 @@ const onLeave = (div) => {
         @mouseleave="onLeave('linkedin')"
         @focus="onHover('linkedin')"
         @blur="onLeave('linkedin')"
-        class="bg-root-deep/20 border-neon-cyan group relative flex items-center gap-4 rounded-lg border p-4 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-[0_0_8px_0_var(--neon-cyan)] focus:translate-y-[-2px] focus:shadow-[0_0_8px_0_var(--neon-cyan)] focus:outline-none"
+        class="bg-root-deep/20 border-neon-cyan group relative flex items-center gap-4 rounded-lg border p-4 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-neon-cyan-sm focus:translate-y-[-2px] focus:shadow-neon-cyan-sm focus:outline-none"
       >
         <div class="bg-neon-cyan/10 rounded-md p-4">
           <linkedin-icon class="text-neon-cyan h-6 w-6"></linkedin-icon>

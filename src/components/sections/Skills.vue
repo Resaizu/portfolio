@@ -5,31 +5,103 @@ import NeonCard from '@/components/reusable/NeonCard.vue';
 const skills = [
   {
     title: 'Backend',
-    stacks: ['Laravel', 'REST APIs', 'Reverb', 'Sanctum', 'MySQL'],
-    stack_equivalent: ['PHP Framework', 'API Design', 'WebSockets', 'Authentication', 'Relational Database'],
+    stacks: [
+      {
+        name: 'Laravel',
+        desc: 'PHP Framework',
+      },
+      {
+        name: 'REST APIs',
+        desc: 'API Design',
+      },
+      {
+        name: 'Reverb',
+        desc: 'WebSockets',
+      },
+      {
+        name: 'Sanctum',
+        desc: 'Authentication',
+      },
+      {
+        name: 'MySQL',
+        desc: 'Authentication',
+      },
+    ],
   },
   {
     title: 'Frontend',
-    stacks: ['Vue 3', 'Vue Router', 'Axios', 'Pinia', 'Tailwind CSS'],
-    stack_equivalent: ['JS Framework', 'Routing', 'API Communication', 'State Management', 'Utility CSS'],
+    stacks: [
+      {
+        name: 'Vue 3',
+        desc: 'JS Framework',
+      },
+      {
+        name: 'Vue Router',
+        desc: 'Routing',
+      },
+      {
+        name: 'Axios',
+        desc: 'API Communication',
+      },
+      {
+        name: 'Pinia',
+        desc: 'State Management',
+      },
+      {
+        name: 'Tailwind CSS',
+        desc: 'Utility CSS',
+      },
+    ],
   },
   {
     title: 'Infrastructure',
-    stacks: ['AWS', 'cPanel', 'Synology NAS', 'Linux', 'Certbot', 'Docker', 'Redis'],
-    stack_equivalent: [
-      'EC2, RDS, S3',
-      'Shared Hosting',
-      'Self-Hosted',
-      'Server Environment',
-      'SSL',
-      'Container Deployment',
-      'Caching / Message Broker',
+    stacks: [
+      {
+        name: 'AWS',
+        desc: 'EC2, RDS, S3',
+      },
+      {
+        name: 'cPanel',
+        desc: 'Shared Hosting',
+      },
+      {
+        name: 'Synology NAS',
+        desc: 'Self-Hosted',
+      },
+      {
+        name: 'Linux',
+        desc: 'Server Environment',
+      },
+      {
+        name: 'Certbot',
+        desc: 'SSL',
+      },
+      {
+        name: 'Docker',
+        desc: 'Container Deployment',
+      },
+      {
+        name: 'Redis',
+        desc: 'Caching / Message Broker',
+      },
     ],
   },
   {
     title: 'IT Support',
-    stacks: ['Hardware Diagnostics', 'System Troubleshooting', 'End User Support'],
-    stack_equivalent: ['PC Repair & Diagnostics', 'Windows & Software Support', 'Technical Assistance'],
+    stacks: [
+      {
+        name: 'Hardware Diagnostics',
+        desc: 'PC Repair & Diagnostics',
+      },
+      {
+        name: 'System Troubleshooting',
+        desc: 'Windows & Software Support',
+      },
+      {
+        name: 'End User Support',
+        desc: 'Technical Assistance',
+      },
+    ],
   },
 ];
 </script>
@@ -54,11 +126,11 @@ const skills = [
               <bullet></bullet>
 
               <span class="w-48 text-sm leading-none font-medium text-green-200 lg:flex-1 lg:text-base">
-                {{ stack }}
+                {{ stack.name }}
               </span>
 
               <span class="w-46 text-xs leading-none text-green-700 lg:text-sm">
-                {{ skill.stack_equivalent[index] }}
+                {{ stack.desc }}
               </span>
             </li>
           </ul>

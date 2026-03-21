@@ -29,8 +29,7 @@ export const useIndexStore = defineStore('indexStore', {
             description: '',
           },
         ],
-        description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          Aliquam, sapiente quae cumque beatae quam ipsum`, // Short Description
+        description: 'An Example Project showcasing admin panel and landing pages.', // Short Description
         about:
           `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, sapiente quae cumque beatae quam ipsum,
           nobis nam minima id reprehenderit sequi repellat eos, obcaecati dolorum sunt aut praesentium! Ea consequuntur
@@ -76,7 +75,7 @@ export const useIndexStore = defineStore('indexStore', {
             description: '',
           },
         ],
-        description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, sapiente quae cumque beatae quam ipsum',
+        description: 'An Example Project showcasing admin panel and landing pages.',
         about:
           `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, sapiente quae cumque beatae quam ipsum,
           nobis nam minima id reprehenderit sequi repellat eos, obcaecati dolorum sunt aut praesentium! Ea consequuntur
@@ -121,11 +120,3 @@ export const useIndexStore = defineStore('indexStore', {
     },
   },
 });
-
-// To Resolve issues on HMR
-if (import.meta.hot) {
-  import.meta.hot.accept(() => {
-    const store = useIndexStore()
-    store.resolveImages()
-  })
-}

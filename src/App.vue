@@ -27,7 +27,7 @@ const handleScroll = () => {
 onMounted(() => {
   store.resolveImages();
 
-  window.addEventListener('scroll', () => handleScroll());
+  if (window.innerWidth >= 768) window.addEventListener('scroll', () => handleScroll());
 });
 </script>
 
@@ -61,25 +61,25 @@ onMounted(() => {
       <div v-if="route.path === '/'" class="hidden space-x-6 md:flex">
         <router-link
           to="#about"
-          class="hover:text-neon-pink focus:text-neon-pink tracking-widest uppercase focus:outline-none"
+          class="hover:text-neon-pink focus:text-neon-pink tracking-widest uppercase transition-colors duration-300 focus:outline-none"
           :class="{ 'text-neon-pink animate-neon-boot': activeSection === 'about' }"
           >About</router-link
         >
         <router-link
           to="#skills"
-          class="hover:text-neon-pink focus:text-neon-pink tracking-widest uppercase focus:outline-none"
+          class="hover:text-neon-pink focus:text-neon-pink tracking-widest uppercase transition-colors duration-300 focus:outline-none"
           :class="{ 'text-neon-pink animate-neon-boot': activeSection === 'skills' }"
           >Skills</router-link
         >
         <router-link
           to="#projects"
-          class="hover:text-neon-pink focus:text-neon-pink tracking-widest uppercase focus:outline-none"
+          class="hover:text-neon-pink focus:text-neon-pink tracking-widest uppercase transition-colors duration-300 focus:outline-none"
           :class="{ 'text-neon-pink animate-neon-boot': activeSection === 'projects' }"
           >Projects</router-link
         >
         <router-link
           to="#contact"
-          class="hover:text-neon-pink focus:text-neon-pink tracking-widest uppercase focus:outline-none"
+          class="hover:text-neon-pink focus:text-neon-pink tracking-widest uppercase transition-colors duration-300 focus:outline-none"
           :class="{ 'text-neon-pink animate-neon-boot': activeSection === 'contact' }"
           >Contact</router-link
         >
