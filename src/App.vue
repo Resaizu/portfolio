@@ -27,7 +27,7 @@ const handleScroll = () => {
 onMounted(() => {
   store.resolveImages();
 
-  if (window.innerWidth >= 768) window.addEventListener('scroll', () => handleScroll());
+  window.addEventListener('scroll', () => handleScroll());
 });
 </script>
 
